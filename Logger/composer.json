@@ -1,0 +1,26 @@
+{
+    "name": "interprise/module-logger",
+    "description": "To sync products,customers,Orders from Interprise ERP",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "email": "info@mage2gen.com",
+            "name": "Mage2Gen"
+        },
+        {
+            "email": "rshadab25@gmail.com",
+            "name": "Shadab Reza"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Interprise\\Logger\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

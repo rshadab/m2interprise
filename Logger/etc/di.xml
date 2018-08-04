@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Interprise\Logger\Api\CronMasterRepositoryInterface" type="Interprise\Logger\Model\CronMasterRepository"/>
+	<preference for="Interprise\Logger\Api\Data\CronMasterInterface" type="Interprise\Logger\Model\CronMaster"/>
+	<preference for="Interprise\Logger\Api\Data\CronMasterSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Interprise\Logger\Model\ResourceModel\CronMaster\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">interprise_logger_cronmaster</argument>
+			<argument name="resourceModel" xsi:type="string">Interprise\Logger\Model\ResourceModel\CronMaster\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="interprise_logger_cronmaster_grid_data_source" xsi:type="string">Interprise\Logger\Model\ResourceModel\CronMaster\Grid\Collection</item>
+				<item name="interprise_logger_cronlog_grid_data_source" xsi:type="string">Interprise\Logger\Model\ResourceModel\CronLog\Grid\Collection</item>
+				<item name="interprise_logger_cronactivityschedule_grid_data_source" xsi:type="string">Interprise\Logger\Model\ResourceModel\CronActivitySchedule\Grid\Collection</item>
+				<item name="interprise_logger_changelog_grid_data_source" xsi:type="string">Interprise\Logger\Model\ResourceModel\Changelog\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<virtualType name="Interprise\Logger\Model\ResourceModel\CronLog\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">interprise_logger_cronlog</argument>
+			<argument name="resourceModel" xsi:type="string">Interprise\Logger\Model\ResourceModel\CronLog\Collection</argument>
+		</arguments>
+	</virtualType>
+	<virtualType name="Interprise\Logger\Model\ResourceModel\CronActivitySchedule\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">interprise_logger_cronactivityschedule</argument>
+			<argument name="resourceModel" xsi:type="string">Interprise\Logger\Model\ResourceModel\CronActivitySchedule\Collection</argument>
+		</arguments>
+	</virtualType>
+	<virtualType name="Interprise\Logger\Model\ResourceModel\Changelog\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">interprise_logger_changelog</argument>
+			<argument name="resourceModel" xsi:type="string">Interprise\Logger\Model\ResourceModel\Changelog\Collection</argument>
+		</arguments>
+	</virtualType>
+</config>

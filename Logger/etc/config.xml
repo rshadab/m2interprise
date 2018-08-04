@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<setup>
+			<general>
+				<enable/>
+				<api_key/>
+				<api_url/>
+				<currency>GBP</currency>
+				<update_name/>
+				<update_category/>
+				<update_image/>
+			</general>
+		</setup>
+		<payment>
+			<interprisepaid>
+				<active>1</active>
+				<model>Interprise\Logger\Model\Payment\InterprisePaid</model>
+				<order_status>pending</order_status>
+				<title>InterprisePaid</title>
+				<allowspecific>0</allowspecific>
+				<group>offline</group>
+			</interprisepaid>
+		</payment>
+	</default>
+</config>
